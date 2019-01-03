@@ -6,6 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "precommit": "lint-staged",
+    "prepush": "yarn test && yarn run lint",
     "lint": "flow",
     "test": "jest"
   },
@@ -33,10 +35,17 @@
     "flow-bin": "^0.89.0",
     "husky": "^1.3.1",
     "jest": "23.6.0",
+    "lint-staged": "^8.1.0",
     "metro-react-native-babel-preset": "0.51.1",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
     "react-test-renderer": "16.7.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --no-semi --trailing-comma es5 --write \"{app,__{tests,mocks}__}/**/*.js\"",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
