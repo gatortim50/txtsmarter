@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import { Image, View } from 'react-native';
-import { inject } from 'mobx-react';
+import React, { Component } from 'react'
+import { Image, View } from 'react-native'
+import { inject } from 'mobx-react'
 import styles from '../styles/style'
 
-@inject("stores")
+@inject('stores')
 export default class Splash extends Component {
   constructor(props) {
     super(props)
   }
   componentDidMount() {
-    const {stores, navigation } = this.props;
+    const { stores, navigation } = this.props
     setTimeout(() => {
-      navigation.navigate("signUp")
+      navigation.navigate('signUp')
     }, stores.config.SplashTime)
   }
   render() {
     const { stores } = this.props
     return (
       <View style={styles.container}>
-        <Image style={styles.splashImage}
-        source={stores.config.SplashImg}/>
+        <Image style={styles.splashImage} source={stores.config.SplashImg} />
       </View>
     )
   }

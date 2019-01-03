@@ -1,4 +1,3 @@
-
 export default class ConfigStore {
   constructor() {
     this.splashTime = 1000

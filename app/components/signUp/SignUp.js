@@ -1,10 +1,13 @@
+/**
+ * @format
+ * @flow
+ */
 import React from 'react'
 import { observer } from 'mobx-react/native'
 import { View, Text, ImageBackground } from 'react-native'
 import { FormInput, Button } from 'react-native-elements'
 import styles from '../../styles/style'
 import Icon from 'react-native-vector-icons/FontAwesome'
-
 
 // @inject('AuthStore')
 @observer
@@ -63,9 +66,9 @@ class SignUp extends React.Component {
                   leftIcon={
                     <Icon
                       raised
-                      name='heartbeat'
-                      type='font-awesome'
-                      color='#f50'
+                      name="heartbeat"
+                      type="font-awesome"
+                      color="#f50"
                       size={25}
                     />
                   }
