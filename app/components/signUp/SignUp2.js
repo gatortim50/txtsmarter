@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
-import { View, Text, ImageBackground } from 'react-native'
+import { View, Text, ImageBackground, Image } from 'react-native'
 import { FormInput, Button } from 'react-native-elements'
 import styles from '../../styles/style'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -19,10 +19,28 @@ class SignUp2 extends Component {
     }
   }
 
-  static navigationOptions = {
-    header: null,
-    title: '',
-  }
+  static navigationOptions = ({ navigation }) => ({
+    headerRight: (
+      <Button
+        onPress={() => navigation.navigate('signUp3', { index: 1 })}
+        title=""
+        titleStyle={{ fontWeight: '700' }}
+        buttonStyle={{
+          backgroundColor: 'orange',
+          width: 30,
+          height: 30,
+          borderColor: 'transparent',
+          borderWidth: 0,
+          borderRadius: 30,
+        }}
+      >
+        <Image
+          source={require('../../images/icons/arrow-right.png')}
+          style={{ alignItems: 'center', width: 20, height: 20 }}
+        />
+      </Button>
+    ),
+  })
 
   async componentDidMount() {
     this.setState({ fontLoaded: true })
@@ -54,7 +72,7 @@ class SignUp2 extends Component {
             <View style={styles.loginView}>
               <View style={styles.loginTitle}>
                 <View style={{ flexDirection: 'row' }}>
-                  <Text style={styles.travelText}>SIGN UP 2</Text>
+                  <Text style={styles.travelText}>SIGN UP</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.infoText}>We just texted you...</Text>
@@ -91,26 +109,26 @@ class SignUp2 extends Component {
                   errorMessage={phone_valid ? null : 'Enter your 4 digit code'}
                 />
               </View>
-              <Button
-                title="Sign Up"
-                activeOpacity={1}
-                underlayColor="transparent"
-                // onPress={this.submitCredentials}
-                onPress={() => this.props.navigation.navigate('signUp3')}
-                loading={showLoading}
-                loadingProps={{ size: 'small', color: 'white' }}
-                disabled={!phone_valid}
-                buttonStyle={{
-                  height: 50,
-                  width: 250,
-                  backgroundColor: 'transparent',
-                  borderWidth: 2,
-                  borderColor: 'white',
-                  borderRadius: 30,
-                }}
-                containerStyle={{ marginVertical: 10 }}
-                titleStyle={{ fontWeight: 'bold', color: 'white' }}
-              />
+              {/*<Button*/}
+              {/*title="Sign Up"*/}
+              {/*activeOpacity={1}*/}
+              {/*underlayColor="transparent"*/}
+              {/*// onPress={this.submitCredentials}*/}
+              {/*onPress={() => this.props.navigation.navigate('signUp3')}*/}
+              {/*loading={showLoading}*/}
+              {/*loadingProps={{ size: 'small', color: 'white' }}*/}
+              {/*disabled={!phone_valid}*/}
+              {/*buttonStyle={{*/}
+              {/*height: 50,*/}
+              {/*width: 250,*/}
+              {/*backgroundColor: 'transparent',*/}
+              {/*borderWidth: 2,*/}
+              {/*borderColor: 'white',*/}
+              {/*borderRadius: 30,*/}
+              {/*}}*/}
+              {/*containerStyle={{ marginVertical: 10 }}*/}
+              {/*titleStyle={{ fontWeight: 'bold', color: 'white' }}*/}
+              {/*/>*/}
             </View>
           ) : (
             <Text>Loading...</Text>

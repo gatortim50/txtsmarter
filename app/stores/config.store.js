@@ -9,7 +9,4 @@ export default class ConfigStore {
   get SplashTime() {
     return this.splashTime
   }
-  get LoginBG() {
-    return this.loginBG
-  }
 }
