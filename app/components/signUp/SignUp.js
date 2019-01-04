@@ -4,7 +4,13 @@
  */
 import React from 'react'
 import { observer } from 'mobx-react/native'
-import { View, Text, ImageBackground, Image } from 'react-native'
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableHighlight,
+} from 'react-native'
 import { FormInput, Button } from 'react-native-elements'
 import styles from '../../styles/style'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -25,24 +31,14 @@ class SignUp extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
     headerRight: (
-      <Button
+      <TouchableHighlight
         onPress={() => navigation.navigate('signUp2', { index: 1 })}
-        title=""
-        titleStyle={{ fontWeight: '700' }}
-        buttonStyle={{
-          backgroundColor: 'orange',
-          width: 30,
-          height: 30,
-          borderColor: 'transparent',
-          borderWidth: 0,
-          borderRadius: 30,
-        }}
       >
         <Image
           source={require('../../images/icons/arrow-right.png')}
           style={{ alignItems: 'center', width: 20, height: 20 }}
         />
-      </Button>
+      </TouchableHighlight>
     ),
   })
 

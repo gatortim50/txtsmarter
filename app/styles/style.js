@@ -19,6 +19,7 @@ export default StyleSheet.create({
     flex: 1,
     top: 0,
     left: 0,
+    backgroundColor: colors.bloodOrange,
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT,
     justifyContent: 'center',
@@ -33,7 +34,7 @@ export default StyleSheet.create({
   loginTitle: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   travelText: {
     color: colors.snow,
