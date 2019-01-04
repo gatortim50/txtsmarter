@@ -109,26 +109,6 @@ class SignUp2 extends Component {
                   errorMessage={phone_valid ? null : 'Enter your 4 digit code'}
                 />
               </View>
-              {/*<Button*/}
-              {/*title="Sign Up"*/}
-              {/*activeOpacity={1}*/}
-              {/*underlayColor="transparent"*/}
-              {/*// onPress={this.submitCredentials}*/}
-              {/*onPress={() => this.props.navigation.navigate('signUp3')}*/}
-              {/*loading={showLoading}*/}
-              {/*loadingProps={{ size: 'small', color: 'white' }}*/}
-              {/*disabled={!phone_valid}*/}
-              {/*buttonStyle={{*/}
-              {/*height: 50,*/}
-              {/*width: 250,*/}
-              {/*backgroundColor: 'transparent',*/}
-              {/*borderWidth: 2,*/}
-              {/*borderColor: 'white',*/}
-              {/*borderRadius: 30,*/}
-              {/*}}*/}
-              {/*containerStyle={{ marginVertical: 10 }}*/}
-              {/*titleStyle={{ fontWeight: 'bold', color: 'white' }}*/}
-              {/*/>*/}
             </View>
           ) : (
             <Text>Loading...</Text>
